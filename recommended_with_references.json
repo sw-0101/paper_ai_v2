@@ -1,10 +1,19 @@
 {
-    "Fast Segment Anything": {
+    "Segment Anything in High Quality": {
         "references": [
-            "YOLOX: Exceeding YOLO Series in 2021",
-            "YOLOv7: Trainable bag-of-freebies sets new state-of-the-art for real-time object detectors",
-            "Segment Anything"
+            "The 2017 DAVIS Challenge on Video Object Segmentation",
+            "NDD20: A large-scale few-shot dolphin dataset for coarse and fine-grained categorisation",
+            "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+            "On the Opportunities and Risks of Foundation Models",
+            "CPT: Colorful Prompt Tuning for Pre-trained Vision-Language Models",
+            "Mask2Former for Video Instance Segmentation",
+            "Dual Modality Prompt Tuning for Vision-Language Pre-Trained Model",
+            "High-Quality Entity Segmentation",
+            "What do Vision Transformers Learn? A Visual Exploration",
+            "Segment Anything",
+            "SegGPT: Segmenting Everything In Context",
+            "Segment Everything Everywhere All at Once"
         ],
-        "abstract": "The recently proposed segment anything model (SAM) has made a significant influence in many computer vision tasks. It is becoming a foundation step for many high-level tasks, like image segmentation, image caption, and image editing. However, its huge computation costs prevent it from wider applications in industry scenarios. The computation mainly comes from the Transformer architecture at high-resolution inputs. In this paper, we propose a speed-up alternative method for this fundamental task with comparable performance. By reformulating the task as segments-generation and prompting, we find that a regular CNN detector with an instance segmentation branch can also accomplish this task well. Specifically, we convert this task to the well-studied instance segmentation task and directly train the existing instance segmentation method using only 1/50 of the SA-1B dataset published by SAM authors. With our method, we achieve a comparable performance with the SAM method at 50 times higher run-time speed. We give sufficient experimental results to demonstrate its effectiveness. The codes and demos will be released at https://github.com/CASIA-IVA-Lab/FastSAM."
+        "abstract": "The recent Segment Anything Model (SAM) represents a big leap in scaling up segmentation models, allowing for powerful zero-shot capabilities and flexible prompting. Despite being trained with 1.1 billion masks, SAM's mask prediction quality falls short in many cases, particularly when dealing with objects that have intricate structures. We propose HQ-SAM, equipping SAM with the ability to accurately segment any object, while maintaining SAM's original promptable design, efficiency, and zero-shot generalizability. Our careful design reuses and preserves the pre-trained model weights of SAM, while only introducing minimal additional parameters and computation. We design a learnable High-Quality Output Token, which is injected into SAM's mask decoder and is responsible for predicting the high-quality mask. Instead of only applying it on mask-decoder features, we first fuse them with early and final ViT features for improved mask details. To train our introduced learnable parameters, we compose a dataset of 44K fine-grained masks from several sources. HQ-SAM is only trained on the introduced detaset of 44k masks, which takes only 4 hours on 8 GPUs. We show the efficacy of HQ-SAM in a suite of 9 diverse segmentation datasets across different downstream tasks, where 7 out of them are evaluated in a zero-shot transfer protocol. Our code and models will be released at https://github.com/SysCV/SAM-HQ."
     }
 }
